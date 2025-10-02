@@ -16,16 +16,20 @@ const SideNavigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 h-full w-23 md:w-65 bg-slate-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-      <div className="container pt-7">
+    <nav
+      className={`fixed top-0 left-0 h-full ${
+        isMobileMenuOpen ? "w-50" : "w-23"
+      } md:w-65 bg-slate-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 rounded-lg transition-all duration-300 ease-in-out`}
+    >
+      <div className="container pt-2">
         <div className="hidden md:flex flex-col items-center mb-5">
           <Link
             href="/"
-            className="flex text-center text-xl items-center font-bold mb-7"
+            className="flex text-center text-xl items-center font-bold mb-7 pt-5"
           >
             <Image
-              className="rounded-full mx-auto border-1 border-slate-200 dark:border-slate-600 mr-2"
-              src="/GamehubLogo.jpg"
+              className="rounded-base mx-auto border-1 border-slate-200 dark:border-slate-600 mr-2"
+              src="/GameHub.svg"
               alt="Game Hub Logo"
               width={50}
               height={50}
@@ -34,7 +38,7 @@ const SideNavigation = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="flex flex-col gap-30 h-full w-full">
+          <div className="flex flex-col gap-20 h-full w-full">
             <div className="flex flex-col mt-4 gap-6">
               {menuItemsTop.map((itemTop) => {
                 const isActive = pathname === itemTop.href;
@@ -78,7 +82,7 @@ const SideNavigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden  rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+            className="md:hidden rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
           >
             {isMobileMenuOpen ? (
               <XMarkIcon className="h-6 w-6" />
@@ -86,6 +90,120 @@ const SideNavigation = () => {
               <Bars3Icon className="h-6 w-6" />
             )}
           </button>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen ? (
+            <div className="md:hidden flex flex-col gap-5 h-full w-full transition-all duration-300 ease-in-out">
+              <div className="flex flex-col mt-4 gap-6">
+                <Link
+                  href="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex text-center text-lg items-center font-bold mb-1"
+                >
+                  <Image
+                    className="rounded-base mx-auto border-1 border-slate-200 dark:border-slate-600 mr-2"
+                    src="/GameHub.svg"
+                    alt="Game Hub Logo"
+                    width={30}
+                    height={30}
+                  />
+                  GameHub&trade;
+                </Link>
+                {menuItemsTop.map((itemTop) => {
+                  const isActive = pathname === itemTop.href;
+                  return (
+                    <Link
+                      key={itemTop.href}
+                      href={itemTop.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="ml-2"
+                    >
+                      <div
+                        className={`flex items-center p-1 text-base font-light rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${
+                          isActive ? "text-primary" : ""
+                        }`}
+                      >
+                        <Image
+                          src={itemTop.image}
+                          alt={itemTop.label}
+                          width={20}
+                          height={20}
+                        />
+                        <span className="ml-3 mt-1">{itemTop.label}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col mt-18 gap-10">
+                {menuItemsBottom.map((itemBottom) => (
+                  <Link
+                    key={itemBottom.href}
+                    href={itemBottom.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="ml-2"
+                  >
+                    <div className="flex items-center p-1 text-lg font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                      <Image
+                        src={itemBottom.image}
+                        alt={itemBottom.label}
+                        width={20}
+                        height={20}
+                      />
+                      <span className="ml-3 mt-1">{itemBottom.label}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="md:hidden flex flex-col items-center gap-8 h-full w-full pt-4 transition-all duration-300 ease-in-out">
+              {/* Icon-only menu when mobile menu is closed */}
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex text-center text-lg items-center font-bold mb-1"
+              >
+                <Image
+                  className="rounded-base mx-auto border-1 border-slate-200 dark:border-slate-600 mr-2"
+                  src="/GameHub.svg"
+                  alt="Game Hub Logo"
+                  width={80}
+                  height={80}
+                />
+              </Link>
+              <div className="flex flex-col mt-4 gap-8">
+                {menuItemsTop.map((itemTop) => (
+                  <Link key={itemTop.href} href={itemTop.href} className="mb-2">
+                    <Image
+                      src={itemTop.image}
+                      alt={itemTop.label}
+                      width={20}
+                      height={20}
+                      className="mx-auto"
+                    />
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-col mt-auto pt-8 gap-8">
+                {menuItemsBottom.map((itemBottom) => (
+                  <Link
+                    key={itemBottom.href}
+                    href={itemBottom.href}
+                    className="mb-2"
+                  >
+                    <Image
+                      src={itemBottom.image}
+                      alt={itemBottom.label}
+                      width={20}
+                      height={20}
+                      className="mx-auto"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Mobhile Menu */}
