@@ -2,16 +2,8 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-
-const menuItems = [
-  { href: "/", label: "Home" },
-  { href: "/category", label: "Category" },
-  { href: "/library", label: "Library" },
-  { href: "/community", label: "Community" },
-  { href: "/friends", label: "Friends" },
-  { href: "/wishlists", label: "Wishlists" },
-  { href: "/downloads", label: "Downloads" },
-];
+import { menuItemsTop } from "@/contents/sidenavmenutop";
+import { menuItemsBottom } from "@/contents/sidenavmenubottom";
 
 const SideNavigation = () => {
   return (
@@ -20,7 +12,7 @@ const SideNavigation = () => {
         <div className="flex flex-col items-center mb-5">
           <Link
             href="/"
-            className="flex text-center text-xl items-center font-bold mb-4"
+            className="flex text-center text-xl items-center font-bold mb-7"
           >
             <Image
               className="rounded-full mx-auto border-1 border-slate-200 dark:border-slate-600 mr-2"
@@ -31,16 +23,37 @@ const SideNavigation = () => {
             />
             GameHub&trade;
           </Link>
-          <div className="flex flex-col mt-4 gap-6">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-lg hover:bg-slate-200 dark:hover:bg-gray-600 p-2 rounded-lg w-full text-center"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="flex flex-col gap-30 h-full w-full">
+            <div className="flex flex-col mt-4 gap-6">
+              {menuItemsTop.map((itemTop) => (
+                <Link key={itemTop.href} href={itemTop.href}>
+                  <div className="flex items-center p-2 text-lg font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <Image
+                      src={itemTop.image}
+                      alt={itemTop.label}
+                      width={25}
+                      height={25}
+                    />
+                    <span className="ml-3">{itemTop.label}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col mt-auto gap-6">
+              {menuItemsBottom.map((itemBottom) => (
+                <Link key={itemBottom.href} href={itemBottom.href}>
+                  <div className="flex items-center p-2 text-lg font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <Image
+                      src={itemBottom.image}
+                      alt={itemBottom.label}
+                      width={25}
+                      height={25}
+                    />
+                    <span className="ml-3">{itemBottom.label}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
