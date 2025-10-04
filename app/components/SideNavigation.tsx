@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
-const SideNavigation = () => {
+export const SideNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const toggleMobileMenu = () => {
