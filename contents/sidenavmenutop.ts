@@ -1,39 +1,43 @@
+import Home from "@/app/page";
 import { MenuItem } from "@/types";
+import {
+  HomeIcon,
+  ListBulletIcon,
+  BookOpenIcon,
+  UserGroupIcon,
+  UserIcon,
+  ArrowDownTrayIcon,
+} from "@heroicons/react/24/outline";
 
 export const menuItemsTop: MenuItem[] = [
   {
     href: "/",
     label: "Home",
-    image: "/home.svg",
+    icon: HomeIcon,
   },
   {
     href: "/category",
     label: "Category",
-    image: "/category.svg",
+    icon: ListBulletIcon,
   },
   {
     href: "/library",
     label: "Library",
-    image: "/library.svg",
+    icon: BookOpenIcon,
   },
   {
     href: "/community",
     label: "Community",
-    image: "/community.svg",
+    icon: UserGroupIcon,
   },
   {
     href: "/friends",
     label: "Friends",
-    image: "/friends.svg",
-  },
-  {
-    href: "/wishlists",
-    label: "Wishlists",
-    image: "/wishlist.svg",
+    icon: UserIcon,
   },
   {
     href: "/downloads",
     label: "Downloads",
-    image: "/download.svg",
+    icon: ArrowDownTrayIcon,
   },
 ];

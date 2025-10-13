@@ -17,7 +17,7 @@ export const SideNavigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 h-18 md:h-full w-18 md:w-65 bg-slate-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 md:rounded-lg transition-all duration-300 ease-in-out`}
+      className={`fixed top-0 left-0 h-18 md:h-full w-18 md:w-65 bg-slate-50 dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-600 p-4 md:rounded-b-md transition-all duration-300 ease-in-out`}
     >
       <div className="md:container pt-2 max-h-xl flex flex-col justify-between h-full">
         <div className="hidden md:flex flex-col items-center mb-5">
@@ -47,12 +47,8 @@ export const SideNavigation = () => {
                         isActive ? "text-primary" : ""
                       }`}
                     >
-                      <Image
-                        src={itemTop.image}
-                        alt={itemTop.label}
-                        width={25}
-                        height={25}
-                      />
+                      {/* Icon before label */}
+                      <itemTop.icon className="h-6 w-6 mr-2" />
                       <span className="ml-3">{itemTop.label}</span>
                     </div>
                   </Link>
@@ -63,12 +59,8 @@ export const SideNavigation = () => {
               {menuItemsBottom.map((itemBottom) => (
                 <Link key={itemBottom.href} href={itemBottom.href}>
                   <div className="flex items-center p-2 text-lg font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <Image
-                      src={itemBottom.image}
-                      alt={itemBottom.label}
-                      width={25}
-                      height={25}
-                    />
+                    {/* Icon before label */}
+                    <itemBottom.icon className="h-6 w-6 mr-2" />
                     <span className="ml-3">{itemBottom.label}</span>
                   </div>
                 </Link>
@@ -122,12 +114,8 @@ export const SideNavigation = () => {
                             isActive ? "text-primary" : ""
                           }`}
                         >
-                          <Image
-                            src={itemTop.image}
-                            alt={itemTop.label}
-                            width={25}
-                            height={25}
-                          />
+                          {/* Icon before label */}
+                          <itemTop.icon className="h-6 w-6 mr-2" />
                           <span className="ml-3">{itemTop.label}</span>
                         </div>
                       </Link>
@@ -142,12 +130,8 @@ export const SideNavigation = () => {
                       onClick={toggleMobileMenu}
                     >
                       <div className="flex items-center p-2 text-lg font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <Image
-                          src={itemBottom.image}
-                          alt={itemBottom.label}
-                          width={25}
-                          height={25}
-                        />
+                        {/* Icon before label */}
+                        <itemBottom.icon className="h-6 w-6 mr-2" />
                         <span className="ml-3">{itemBottom.label}</span>
                       </div>
                     </Link>
