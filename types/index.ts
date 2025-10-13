@@ -5,3 +5,11 @@ export interface MenuItem {
   label: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
+
+export interface FeaturedItems {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+}
