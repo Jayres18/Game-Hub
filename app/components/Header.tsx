@@ -16,7 +16,7 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex ml-18 md:ml-65  justify-between items-center bg-slate-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-600 py-4 px-2 md:px-15">
+    <div className="flex ml-18 md:ml-65 gap-15  md:justify-between items-center bg-slate-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-600 py-4 px-2 md:px-15">
       <div className="flex items-center space-x-4 bg-slate-100 dark:bg-gray-700 p-2 rounded-lg">
         <Form action="/search" className="flex max-w-3xs md:max-w-md">
           <input
@@ -30,11 +30,11 @@ const Header = () => {
           </button>
         </Form>
       </div>
-      <div className="flex items-center space-x-1.5 md:space-x-7">
-        <button className="rounded-full bg-slate-100 md:p-2 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
+      <div className="flex items-center md:space-x-7">
+        <button className="hidden md:flex rounded-full bg-slate-100 md:p-2 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
           <EnvelopeIcon className="h-6 w-6" />
         </button>
-        <button className="rounded-full bg-slate-100 md:p-2 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
+        <button className="hidden md:flex rounded-full bg-slate-100 md:p-2 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
           <BellAlertIcon className="h-6 w-6" />
         </button>
         <button

@@ -17,7 +17,7 @@ export const SideNavigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 h-18 md:h-full w-18 md:w-65 bg-slate-50 dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-600 p-4 md:rounded-b-md transition-all duration-300 ease-in-out`}
+      className={`fixed top-0 left-0 h-18 md:h-full w-18 md:w-65 bg-slate-50 dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-600 p-4 md:rounded-b-md transition-all duration-300 ease-in-out z-50`}
     >
       <div className="md:container pt-2 max-h-xl flex flex-col justify-between h-full">
         <div className="hidden md:flex flex-col items-center mb-5">

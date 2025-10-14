@@ -14,11 +14,12 @@ const Featured = () => {
   return (
     <div className="container mt-4 md:ml-65">
       <div className="container max-w-5xl mb-4">
-        <h1 className="text-xl font-bold my-4">
+        <h1 className="text-lg md:text-xl font-bold my-4">
           Featured and Recommended Games
         </h1>
       </div>
-      <div className="items-center justify-center flex">
+      {/* Desktop View */}
+      <div className="items-center justify-center hidden md:flex">
         <Carousel
           orientation="horizontal"
           className="w-full max-w-5xl h-120" // Wider and shorter
@@ -60,6 +61,47 @@ const Featured = () => {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
+        </Carousel>
+      </div>
+
+      {/* Mobile View */}
+      <div className="items-center justify-center md:hidden">
+        <Carousel className="w-full h-150" orientation="horizontal">
+          <CarouselContent>
+            {featuredItems.map((item, index) => (
+              <CarouselItem key={index}>
+                <div>
+                  <Card>
+                    <CardContent className="flex flex-col items-center p-4 h-145">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="p-2 rounded-xl object-cover"
+                      />
+                      <div className="grid grid-cols-1 gap-2 p-4">
+                        <h2 className="text-lg font-semibold mb-2">
+                          {item.title}
+                        </h2>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {item.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {item.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 bg-slate-200 dark:bg-gray-700 rounded-full text-sm"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
         </Carousel>
       </div>
     </div>
