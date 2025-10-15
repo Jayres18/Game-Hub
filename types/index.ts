@@ -13,3 +13,11 @@ export interface FeaturedItems {
   description: string;
   tags: string[];
 }
+
+export interface OtherGamesItems {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+}
