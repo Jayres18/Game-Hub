@@ -51,7 +51,7 @@ const Category = () => {
     <div className="container">
       <div className="mt-25 mb-5 md:ml-65 px-2 items-center">
         <div className="flex justify-between">
-          <h1 className="text-xl md:text-4xl font-bold">Game Categories</h1>
+          <h1 className="text-xl md:text-3xl font-bold">Game Categories</h1>
           <Button
             variant="outline"
             onClick={toggleFilters}
@@ -65,7 +65,7 @@ const Category = () => {
 
         {/* Filter panel - initially hidden, toggled by the Filter button */}
         <div
-          className={`bg-slate-200 dark:bg-gray-800 border border-slate-200 max-w-7xl mt-4 p-4 rounded-md transition-all duration-300 overflow-hidden ${
+          className={`bg-slate-100 dark:bg-gray-800 border border-slate-200 max-w-7xl mt-4 p-4 rounded-md transition-all duration-300 overflow-hidden ${
             showFilters
               ? "max-h-[1000px] opacity-100 mb-10"
               : "max-h-0 opacity-0 p-0"
@@ -114,16 +114,16 @@ const Category = () => {
 
         {/* List of Games Section */}
         <div>
-          <h2 className="text-lg md:text-3xl font-bold mb-2 md:mb-5">
+          <h2 className="text-lg md:text-2xl font-bold mb-2 md:mb-5">
             List of Games
           </h2>
 
           {/* 3-column grid (responsive) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border p-5 rounded-lg">
             {filteredItems.map((item) => (
               <article
                 key={item.id}
-                className="rounded-lg shadow-md p-4 duration-300 hover:scale-[1.02] transition-transform group"
+                className="rounded-lg shadow-lg dark:shadow-slate-700 p-4 duration-300 hover:scale-[1.02] transition-transform group"
               >
                 <div className="flex flex-col items-center gap-2 p-4">
                   <img

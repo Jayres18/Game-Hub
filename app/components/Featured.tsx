@@ -16,7 +16,7 @@ const Featured = () => {
     <div className="container">
       <div className="mt-25 mb-5 md:ml-65 px-2 items-center">
         <div className="container max-w-5xl mb-4 px-0 md:px-4">
-          <h1 className="text-lg md:text-xl font-bold my-4 text-center md:text-left">
+          <h1 className="text-lg md:text-3xl font-bold my-4 text-center md:text-left">
             Featured and Recommended Games
           </h1>
         </div>

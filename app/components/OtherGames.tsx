@@ -16,7 +16,7 @@ const OtherGames = () => {
     <div className="container">
       <div className="mb-5 md:ml-65 px-2 items-center">
         <div className="container max-w-5xl mb-4">
-          <h2 className="text-lg md:text-xl font-bold my-4">
+          <h2 className="text-lg md:text-2xl font-bold my-4">
             Other Notable Games
           </h2>
         </div>

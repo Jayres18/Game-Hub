@@ -21,21 +21,6 @@ export const menuItemsTop: MenuItem[] = [
     icon: ListBulletIcon,
   },
   {
-    href: "/library",
-    label: "Library",
-    icon: BookOpenIcon,
-  },
-  {
-    href: "/community",
-    label: "Community",
-    icon: UserGroupIcon,
-  },
-  {
-    href: "/friends",
-    label: "Friends",
-    icon: UserIcon,
-  },
-  {
     href: "/downloads",
     label: "Downloads",
     icon: ArrowDownTrayIcon,
