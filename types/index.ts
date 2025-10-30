@@ -29,3 +29,11 @@ export interface AllItems {
   description: string;
   tags: string[];
 }
+
+export interface DownloadedItems {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+}
